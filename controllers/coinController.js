@@ -2,12 +2,12 @@ import CoinModel from '../models/coinModel'
 
 const addCoin = (req, res) => {
     let newCoin = new coinModel({
-        name: res.locals.gameInfo.name,
-        desc: res.locals.gameInfo.desc,
-        year: res.locals.gameInfo.year,
-        available: res.locals.gameInfo.available,
-        symbol: res.locals.gameInfo.symbol,
-        picture: res.locals.gameInfo.picture
+        name: res.locals.coinInfo.name,
+        desc: res.locals.coinInfo.desc,
+        year: res.locals.coinInfo.year,
+        available: res.locals.coinInfo.available,
+        symbol: res.locals.coinInfo.symbol,
+        picture: res.locals.coinInfo.picture
     })
     newCoin.save().then(()=>{
         return res.status(201).send({newCoin})
