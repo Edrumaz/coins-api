@@ -1,13 +1,14 @@
-const Mongoose = require('mongoose')
+import Mongoose from 'mongoose'
 
-const Coin = Mongoose.Schema({
-    _id: mongoose.Schema.Types.ObjectId,
-    name: String,
-    desc: String,
-    year: String,
-    available: Boolean,
-    symbol: String,
-    picture: String
+const GameSchema = Mongoose.Schema({
+        title: String,
+        year: String,
+        img: String,
+        description: String,
+        Developer: String,
+        Publisher: String,
+        Platform: [String],
+        Genre: String,
 })
 
-export default Mongoose.model('Coin', CoinSchema)
+export default Mongoose.model('Game', GameSchema)
