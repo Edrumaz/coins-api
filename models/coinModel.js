@@ -1,14 +1,13 @@
 import Mongoose from 'mongoose'
 
-const GameSchema = Mongoose.Schema({
-        title: String,
+const CoinSchema = Mongoose.Schema({
+        _id: Mongoose.Schema.Types.ObjectId,
+        name: String,
+        desc: String,
         year: String,
+        available: Boolean,
+        Symbol: String,
         img: String,
-        description: String,
-        Developer: String,
-        Publisher: String,
-        Platform: [String],
-        Genre: String,
 })
 
-export default Mongoose.model('Game', GameSchema)
+export default Mongoose.model('Coin', CoinSchema)

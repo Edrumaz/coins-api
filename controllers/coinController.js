@@ -16,11 +16,14 @@ const addCoin = (req, res) => {
 }
 
 const getCoin = (req, res) => {
-    CoinModel.findOne({title: req.query.t}).then(coin=>{
-        return res.status(201).send({coin})
-    }).catch(err => {
-        return res.status(500).send({error: err})
-    })
+   const collection = req.app.locals.collection;
+  collection.find({}).toArray().then(response => res.status(200).json(response)).catch(error => console.error(error));
+
+    //CoinModel.findOne({name: req.query.n}).then(coin=>{
+   //     return res.status(201).send({coin})
+    //}).catch(err => {
+   //     return res.status(500).send({error: err})
+    //})
 }
 
 export default {
